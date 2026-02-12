@@ -1,0 +1,362 @@
+:root {
+    --black: #000000;
+    --text-color: #2c2c2c;
+    --white: #ffffff;
+    --grey-light: #f4f4f4;
+    --grey-medium: #e0e0e0;
+    --grey-dark: #666666;
+    --accent: #000000;
+    /* Keeping accent minimal/black */
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.subtitle {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Header */
+.header {
+    background-color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--grey-medium);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 4%;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav a:not(.btn-nav):hover {
+    opacity: 0.6;
+}
+
+.btn-nav {
+    border: 2px solid var(--black);
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+}
+
+.btn-nav:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    color: #cccccc;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 1rem 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background-color: var(--grey-medium);
+}
+
+/* Section Rows (Z-Pattern) */
+.section-row {
+    display: flex;
+    min-height: 80vh;
+    /* Ensure content doesn't get too small on short screens */
+    min-height: 500px;
+}
+
+.section-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.content-block {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    background-color: var(--white);
+}
+
+.content-wrapper {
+    max-width: 500px;
+}
+
+.visual-block {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Visual Placeholders (Grey blocks instead of images) */
+.bg-grey-1 {
+    background-color: #f0f0f0;
+}
+
+.bg-grey-2 {
+    background-color: #e6e6e6;
+}
+
+.bg-grey-3 {
+    background-color: #dcdcdc;
+}
+
+.content-wrapper h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--grey-dark);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 2.5rem;
+}
+
+/* Features/Stats */
+.stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--black);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--grey-dark);
+    letter-spacing: 1px;
+}
+
+/* Classification Box (Redesigned) */
+.classification-box {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--black);
+}
+
+.classification-box h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.classification-box ul {
+    list-style: none;
+}
+
+.classification-box li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.classification-box li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--black);
+}
+
+/* Disclaimer Box (Redesigned) */
+.disclaimer-box {
+    font-size: 0.85rem;
+    color: var(--grey-dark);
+    margin-top: 2rem;
+    font-style: italic;
+    border-top: 1px solid var(--grey-medium);
+    padding-top: 1rem;
+}
+
+.info-icon {
+    font-style: normal;
+    margin-right: 0.5rem;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    color: #999;
+}
+
+.contact-details {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--black);
+    color: var(--grey-dark);
+    padding: 3rem 0;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.footer-logo {
+    color: var(--white);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 0 2rem;
+    }
+
+    .nav ul {
+        gap: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .section-row,
+    .section-row.reverse {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .visual-block {
+        order: -1;
+        /* Image first on mobile usually looks good, or keep text first */
+        width: 100%;
+        min-height: 350px;
+        /* Ensure image is visible and large enough */
+    }
+
+    .content-block {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .nav {
+        margin-top: 1rem;
+    }
+
+    .nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
